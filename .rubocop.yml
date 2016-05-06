@@ -8,7 +8,7 @@ AllCops:
 Metrics/AbcSize:
   Max: 40
 Metrics/LineLength:
-  Max: 120
+  Max: 125
   AllowURI: true
   URISchemes:
     - http
