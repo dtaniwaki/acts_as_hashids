@@ -1,7 +1,6 @@
 # acts_as_hashids
 
 [![Gem Version][gem-image]][gem-link]
-[![Dependency Status][deps-image]][deps-link]
 [![Build Status][build-image]][build-link]
 [![Coverage Status][cov-image]][cov-link]
 [![Code Climate][gpa-image]][gpa-link]
@@ -112,8 +111,6 @@ Copyright (c) 2014 Daisuke Taniwaki. See [LICENSE](LICENSE) for details.
 [gem-link]:    http://badge.fury.io/rb/acts_as_hashids
 [build-image]: https://secure.travis-ci.org/dtaniwaki/acts_as_hashids.png
 [build-link]:  http://travis-ci.org/dtaniwaki/acts_as_hashids
-[deps-image]:  https://gemnasium.com/dtaniwaki/acts_as_hashids.svg
-[deps-link]:   https://gemnasium.com/dtaniwaki/acts_as_hashids
 [cov-image]:   https://coveralls.io/repos/dtaniwaki/acts_as_hashids/badge.png
 [cov-link]:    https://coveralls.io/r/dtaniwaki/acts_as_hashids
 [gpa-image]:   https://codeclimate.com/github/dtaniwaki/acts_as_hashids.png
