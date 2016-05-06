@@ -38,9 +38,6 @@ Foo.find(3)
 Foo.find("ePQgabdg")
 # => #<Foo:0x007feb5978a7c0 id: 3>
 
-Foo.find_by_hashids("ePQgabdg")
-# => #<Foo:0x007feb5978a7c0 id: 3>
-
 Foo.with_hashids("ePQgabdg").first
 # => #<Foo:0x007feb5978a7c0 id: 3>
 ```
