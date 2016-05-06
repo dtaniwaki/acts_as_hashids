@@ -1,0 +1,13 @@
+language: ruby
+sudo: required
+rvm:
+  - 2.1.0
+  - 2.2.0
+  - 2.3.0
+cache: bundler
+script:
+  - bundle exec rake
+services:
+  - docker
+notifications:
+  email: false
