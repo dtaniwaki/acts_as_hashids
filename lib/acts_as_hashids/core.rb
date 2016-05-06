@@ -5,6 +5,7 @@ module ActsAsHashids
     extend ActiveSupport::Concern
 
     def to_param
+      id = self.public_send(self.class.primary_key)
       id && self.class.hashids.encode(id)
     end
 
@@ -45,7 +46,7 @@ module ActsAsHashids
         decoded_ids = ids.map { |id| hashids.decode(id) }.flatten
         raise ActsAsHashids::Exception, "Decode error: #{ids.inspect}" if ids.size != decoded_ids.size
 
-        where(id: decoded_ids)
+        where(primary_key => decoded_ids)
       end
 
       def has_many(*args, &block) # rubocop:disable Style/PredicateName
