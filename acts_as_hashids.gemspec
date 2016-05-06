@@ -28,4 +28,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'sqlite3', '~> 1.3'
   spec.add_development_dependency 'rubocop', '= 0.37.2'
   spec.add_development_dependency 'rubocop-rspec', '= 1.4.0'
+  spec.add_development_dependency 'simplecov', '~> 0.11'
+  spec.add_development_dependency 'coveralls', '~> 0.8'
+  spec.add_development_dependency 'codeclimate-test-reporter', '~> 0.5'
 end
