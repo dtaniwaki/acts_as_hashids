@@ -5,7 +5,7 @@ module ActsAsHashids
     extend ActiveSupport::Concern
 
     def to_param
-      id = self.public_send(self.class.primary_key)
+      id = public_send(self.class.primary_key)
       id && self.class.hashids.encode(id)
     end
 
