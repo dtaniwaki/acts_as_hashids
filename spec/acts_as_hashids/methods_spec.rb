@@ -45,9 +45,9 @@ RSpec.describe ActsAsHashids::Methods do
         expect(subject.hashids_secret).to eq '^_^'
       end
       context 'with executable secret' do
-        subject { create_model 'MethodsFoo', secret: -> { '^_^' } }
+        subject { create_model 'MethodsFoo', secret: -> { "#{self.name} ^_^" } }
         it 'returns the custom secret' do
-          expect(subject.hashids_secret).to eq '^_^'
+          expect(subject.hashids_secret).to eq 'MethodsFoo ^_^'
         end
       end
     end

@@ -10,7 +10,7 @@ module ActsAsHashids
 
         define_singleton_method :hashids_secret do
           secret = options[:secret]
-          (secret.respond_to?(:call) ? secret.call : secret) || base_class.name
+          (secret.respond_to?(:call) ? instance_exec(&secret) : secret) || base_class.name
         end
 
         define_singleton_method :hashids do
