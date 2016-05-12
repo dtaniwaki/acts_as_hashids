@@ -64,5 +64,11 @@ RSpec.describe ActsAsHashids::Methods do
         expect(subject.hashids.encode(1)).to eq Hashids.new('MethodsFoo', 16).encode(1)
       end
     end
+    context 'with custom alphabet' do
+      subject { create_model 'MethodsFoo', alphabet: '1234567890abcdef' }
+      it 'returns the hashids instance' do
+        expect(subject.hashids.encode(1)).to eq Hashids.new('MethodsFoo', 8, '1234567890abcdef').encode(1)
+      end
+    end
   end
 end
