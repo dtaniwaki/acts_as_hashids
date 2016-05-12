@@ -15,7 +15,8 @@ module ActsAsHashids
 
         define_singleton_method :hashids do
           length = options[:length] || 8
-          Hashids.new(hashids_secret, length)
+          alphabet = options[:alphabet] || Hashids::DEFAULT_ALPHABET
+          Hashids.new(hashids_secret, length, alphabet)
         end
       end
     end
