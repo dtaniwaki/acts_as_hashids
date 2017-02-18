@@ -5,10 +5,10 @@ rvm:
   - 2.3.0
 env:
   -
-  - ACTIVE_RECORD_VERSION=4.0
-  - ACTIVE_RECORD_VERSION=4.1
-  - ACTIVE_RECORD_VERSION=4.2
-  - ACTIVE_RECORD_VERSION=5.0.0.beta4
+  - ACTIVE_RECORD_VERSION=4.0.0
+  - ACTIVE_RECORD_VERSION=4.1.0
+  - ACTIVE_RECORD_VERSION=4.2.0
+  - ACTIVE_RECORD_VERSION=5.0.0
 cache: bundler
 before_install:
   - gem update --system
