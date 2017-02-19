@@ -6,6 +6,7 @@ require 'acts_as_hashids/version'
 Gem::Specification.new do |spec|
   spec.name          = 'acts_as_hashids'
   spec.version       = ActsAsHashids::VERSION
+  spec.platform      = Gem::Platform::RUBY
   spec.authors       = ['dtaniwaki']
   spec.email         = ['daisuketaniwaki@gmail.com']
 
@@ -15,14 +16,13 @@ Gem::Specification.new do |spec|
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
-  spec.bindir        = 'exe'
-  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
+  spec.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
+  spec.executables   = `git ls-files -- bin/*`.split("\n").map { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'hashids', '~> 1.0'
-  spec.add_dependency 'activerecord', '>= 4.0', '< 6.0'
+  spec.add_runtime_dependency 'hashids', '~> 1.0'
+  spec.add_runtime_dependency 'activerecord', '>= 4.0', '< 6.0'
 
-  spec.add_development_dependency 'bundler', '~> 1.11'
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'rspec', '~> 3.0'
   spec.add_development_dependency 'sqlite3', '~> 1.3'

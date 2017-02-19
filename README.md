@@ -5,7 +5,7 @@
 [![Coverage Status][cov-image]][cov-link]
 [![Code Climate][gpa-image]][gpa-link]
 
-Use [Hashids](https://github.com/peterhellberg/hashids.rb) in ActiveRecord effectively.
+Use [Hashids](https://github.com/peterhellberg/hashids.rb) (a.k.a. Youtube-Like ID) in ActiveRecord effectively.
 
 ## Installation
 
