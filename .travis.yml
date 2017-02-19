@@ -11,7 +11,7 @@ env:
   - ACTIVE_RECORD_VERSION=4.2.0
   - ACTIVE_RECORD_VERSION=5.0.0
 matrix:
-  exclude:
+  allow_failures:
     - rvm: 2.4.0
       env: ACTIVE_RECORD_VERSION=4.0.0
     - rvm: 2.4.0
