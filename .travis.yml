@@ -1,8 +1,9 @@
 language: ruby
 sudo: false
 rvm:
-  - 2.2.2
-  - 2.3.0
+  - 2.2.6
+  - 2.3.3
+  - 2.4.0
 env:
   -
   - ACTIVE_RECORD_VERSION=4.0.0
