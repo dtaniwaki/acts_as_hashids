@@ -10,8 +10,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ['dtaniwaki']
   spec.email         = ['daisuketaniwaki@gmail.com']
 
-  spec.summary       = 'Hashids in ActiveRecord effectively.'
-  spec.description   = 'Use Hashids in ActiveRecord effectively.'
+  spec.summary       = 'Use Youtube-Like ID in ActiveRecord seamlessly.'
+  spec.description   = 'Use Youtube-Like ID in ActiveRecord seamlessly.'
   spec.homepage      = 'https://github.com/dtaniwaki/acts_as_hashids'
   spec.license       = 'MIT'
 

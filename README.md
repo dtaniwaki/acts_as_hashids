@@ -1,11 +1,12 @@
 # acts_as_hashids
 
 [![Gem Version][gem-image]][gem-link]
+[![Download][download-image]][download-link]
 [![Build Status][build-image]][build-link]
 [![Coverage Status][cov-image]][cov-link]
 [![Code Climate][gpa-image]][gpa-link]
 
-Use [Hashids](https://github.com/peterhellberg/hashids.rb) (a.k.a. Youtube-Like ID) in ActiveRecord effectively.
+Use [Hashids](https://github.com/peterhellberg/hashids.rb) (a.k.a. Youtube-Like ID) in ActiveRecord seamlessly.
 
 ## Installation
 
@@ -106,6 +107,8 @@ Copyright (c) 2014 Daisuke Taniwaki. See [LICENSE](LICENSE) for details.
 
 [gem-image]:   https://badge.fury.io/rb/acts_as_hashids.svg
 [gem-link]:    http://badge.fury.io/rb/acts_as_hashids
+[download-image]:https://img.shields.io/gem/dt/acts_as_hashids.svg
+[download-link]:https://rubygems.org/gems/acts_as_hashids
 [build-image]: https://secure.travis-ci.org/dtaniwaki/acts_as_hashids.png
 [build-link]:  http://travis-ci.org/dtaniwaki/acts_as_hashids
 [cov-image]:   https://coveralls.io/repos/dtaniwaki/acts_as_hashids/badge.png
