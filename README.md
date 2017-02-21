@@ -82,6 +82,19 @@ Foo2.create.to_param
 # => "RxQce3a2"
 ```
 
+### alphabet
+
+Specify which characters you use to generate hashids.
+
+```rb
+class Foo < ActiveRecord::Base
+  acts_as_hashids alphabet: '0123456789uvwxyz'
+end
+
+Foo3.create(id: 1).to_param
+# => "4xw8zwyv"
+```
+
 ## Test
 
 Execute the command below to run rspec and rubocop.
