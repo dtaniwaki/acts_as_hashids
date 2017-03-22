@@ -13,7 +13,17 @@ module ActsAsHashids
       def find(ids = nil, &block)
         return detect(&block) if block.present? && respond_to?(:detect)
 
-        encoded_ids = Array(ids).map { |id| id.is_a?(String) ? id : hashids.encode(id) }.flatten
+        encoded_ids = Array(ids).map do |id|
+          begin
+            id = id.to_i if Float(id)
+            hashids.encode(id)
+          rescue TypeError, ArgumentError
+            id
+          end
+        end
+
+        encoded_ids = encoded_ids.flatten
+
         res = with_hashids(encoded_ids).all
         if ids.is_a?(Array)
           raise_record_not_found_exception! encoded_ids, res.size, encoded_ids.size if res.size != encoded_ids.size

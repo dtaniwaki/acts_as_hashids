@@ -45,6 +45,9 @@ RSpec.describe ActsAsHashids::Core do
           )
         end
       end
+      it 'returns the record when finding by string id' do
+        expect(subject.find(foo1.id.to_s)).to eq foo1
+      end
     end
     context 'for multiple arguments' do
       it 'decodes hash id and returns the record' do
