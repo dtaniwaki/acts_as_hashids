@@ -21,7 +21,7 @@ before_install:
   - gem update --system
   - gem --version
   - gem update bundler
-  - bundler --version
+  - bundle --version
 script:
   - 'bundle exec rake'
 notifications:
