@@ -28,46 +28,53 @@ RSpec.describe ActsAsHashids::Methods do
   end
 
   describe '.hashids_secret' do
-    subject { create_model 'MethodsFoo' }
+    subject(:model) { create_model 'MethodsFoo' }
+
     it 'returns the class name' do
-      expect(subject.hashids_secret).to eq 'MethodsFoo'
+      expect(model.hashids_secret).to eq 'MethodsFoo'
     end
     context 'for STI' do
-      let!(:bar) { create_model 'MethodsBar' }
-      subject { create_model 'MethodsFoo', base: MethodsBar }
+      subject(:model) { create_model 'MethodsFoo', base: MethodsBar }
+
       it 'returns the base class name' do
-        expect(subject.hashids_secret).to eq 'MethodsBar'
+        create_model 'MethodsBar'
+        expect(model.hashids_secret).to eq 'MethodsBar'
       end
     end
     context 'with custom secret' do
-      subject { create_model 'MethodsFoo', secret: '^_^' }
+      subject(:model) { create_model 'MethodsFoo', secret: '^_^' }
+
       it 'returns the custom secret' do
-        expect(subject.hashids_secret).to eq '^_^'
+        expect(model.hashids_secret).to eq '^_^'
       end
       context 'with executable secret' do
-        subject { create_model 'MethodsFoo', secret: -> { "#{self.name} ^_^" } }
+        subject(:model) { create_model 'MethodsFoo', secret: -> { "#{name} ^_^" } }
+
         it 'returns the custom secret' do
-          expect(subject.hashids_secret).to eq 'MethodsFoo ^_^'
+          expect(model.hashids_secret).to eq 'MethodsFoo ^_^'
         end
       end
     end
   end
 
   describe '.hashids' do
-    subject { create_model 'MethodsFoo' }
+    subject(:model) { create_model 'MethodsFoo' }
+
     it 'returns the hashids instance' do
-      expect(subject.hashids.encode(1)).to eq Hashids.new('MethodsFoo', 8).encode(1)
+      expect(model.hashids.encode(1)).to eq Hashids.new('MethodsFoo', 8).encode(1)
     end
     context 'with custom length' do
-      subject { create_model 'MethodsFoo', length: 16 }
+      subject(:model) { create_model 'MethodsFoo', length: 16 }
+
       it 'returns the hashids instance' do
-        expect(subject.hashids.encode(1)).to eq Hashids.new('MethodsFoo', 16).encode(1)
+        expect(model.hashids.encode(1)).to eq Hashids.new('MethodsFoo', 16).encode(1)
       end
     end
     context 'with custom alphabet' do
-      subject { create_model 'MethodsFoo', alphabet: '1234567890abcdef' }
+      subject(:model) { create_model 'MethodsFoo', alphabet: '1234567890abcdef' }
+
       it 'returns the hashids instance' do
-        expect(subject.hashids.encode(1)).to eq Hashids.new('MethodsFoo', 8, '1234567890abcdef').encode(1)
+        expect(model.hashids.encode(1)).to eq Hashids.new('MethodsFoo', 8, '1234567890abcdef').encode(1)
       end
     end
   end

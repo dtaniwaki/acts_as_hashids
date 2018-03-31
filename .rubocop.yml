@@ -19,17 +19,32 @@ Metrics/CyclomaticComplexity:
   Max: 10
 Metrics/PerceivedComplexity:
   Max: 10
+Metrics/BlockLength:
+  Enabled: false
 Documentation:
   Enabled: false
 Style/SignalException:
   EnforcedStyle: only_raise
-Style/IndentHash:
+Layout/IndentHash:
   EnforcedStyle: consistent
-Style/IndentArray:
+Layout/IndentArray:
   EnforcedStyle: consistent
-Lint/EndAlignment:
-  AlignWith: variable
+Layout/EndAlignment:
+  EnforcedStyleAlignWith: variable
+Lint/InheritException:
+  Enabled: false
 Style/FrozenStringLiteralComment:
   Enabled: false
 RSpec/AnyInstance:
   Enabled: false
+RSpec/NestedGroups:
+  Max: 4
+RSpec/ContextWording:
+  Prefixes:
+    - when
+    - with
+    - without
+    - for
+    - as
+RSpec/MultipleExpectations:
+  Max: 2
