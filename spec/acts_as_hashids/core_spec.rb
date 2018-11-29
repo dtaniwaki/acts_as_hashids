@@ -19,7 +19,7 @@ RSpec.describe ActsAsHashids::Core do
 
   class Base < ActiveRecord::Base
     self.abstract_class = true
-    acts_as_hashids
+    acts_as_hashids length: 4
   end
 
   class CoreFoo < Base
@@ -42,9 +42,22 @@ RSpec.describe ActsAsHashids::Core do
       end
       context 'with unexisting hash id' do
         it 'raises an exception' do
-          expect { model.find('GXbMabNA') }.to raise_error(
-            ActiveRecord::RecordNotFound, "Couldn't find CoreFoo with 'id'=\"GXbMabNA\""
+          expect { model.find('bMab') }.to raise_error(
+            ActiveRecord::RecordNotFound, "Couldn't find CoreFoo with 'id'=\"bMab\""
           )
+        end
+      end
+      context 'with hash id which looks like a logarithm' do
+        let!(:foo1) { CoreFoo.create(id: CoreFoo.hashids.decode('4E93')[0]) }
+        let!(:foo2) { CoreFoo.create(id: '4') }
+
+        it 'decodes hash id which looks like a logarithm and returns the record' do
+          expect(model.find('4E93')).to eq foo1
+          expect(model.find('4')).not_to eq foo1
+        end
+        it 'decodes hash id and returns the record' do
+          expect(model.find('4E93')).not_to eq foo2
+          expect(model.find('4')).to eq foo2
         end
       end
       it 'returns the record when finding by string id' do
@@ -57,9 +70,9 @@ RSpec.describe ActsAsHashids::Core do
       end
       context 'with unexisting hash id' do
         it 'raises an exception' do
-          expect { model.find(%w[GXbMabNA ePQgabdg]) }.to raise_error(
+          expect { model.find(%w[bMab Qgab]) }.to raise_error(
             ActiveRecord::RecordNotFound,
-            "Couldn't find all CoreFoos with 'id': (\"GXbMabNA\", \"ePQgabdg\") (found 1 results, but was looking for 2)"
+            "Couldn't find all CoreFoos with 'id': (\"bMab\", \"Qgab\") (found 1 results, but was looking for 2)"
           )
         end
       end
@@ -118,7 +131,7 @@ RSpec.describe ActsAsHashids::Core do
     subject(:model) { CoreFoo.create id: 5 }
 
     it 'returns hash id' do
-      expect(model.to_param).to eq 'GXbMabNA'
+      expect(model.to_param).to eq 'bMab'
     end
   end
 end
