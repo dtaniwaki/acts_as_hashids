@@ -22,6 +22,10 @@ matrix:
       env: ACTIVE_RECORD_VERSION=4.0.0
     - rvm: 2.5
       env: ACTIVE_RECORD_VERSION=4.1.0
+    - rvm: 2.6
+      env: ACTIVE_RECORD_VERSION=4.0.0
+    - rvm: 2.6
+      env: ACTIVE_RECORD_VERSION=4.1.0
 before_install:
   - gem update --system
   - gem --version
