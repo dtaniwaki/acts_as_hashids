@@ -26,7 +26,12 @@ before_install:
   - gem update --system
   - gem --version
 install:
-  - gem install bundler
+  # Bundler v2 only supports Ruby v2.3 and above
+  # For Ruby v2.2, install Bundler v1.x
+  - if [ $TRAVIS_RUBY_VERSION == "2.2" ];
+    then gem install bundler -v '< 2';
+    else gem install bundler;
+    fi
   - bundle --version
   - bundle install --jobs=3 --retry=3
 script:
