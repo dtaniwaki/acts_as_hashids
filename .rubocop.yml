@@ -25,7 +25,7 @@ Documentation:
   Enabled: false
 Style/SignalException:
   EnforcedStyle: only_raise
-Layout/IndentHash:
+Layout/IndentFirstHashElement:
   EnforcedStyle: consistent
 Layout/IndentFirstArrayElement:
   EnforcedStyle: consistent
