@@ -27,7 +27,7 @@ Style/SignalException:
   EnforcedStyle: only_raise
 Layout/IndentHash:
   EnforcedStyle: consistent
-Layout/IndentArray:
+Layout/IndentFirstArrayElement:
   EnforcedStyle: consistent
 Layout/EndAlignment:
   EnforcedStyleAlignWith: variable
