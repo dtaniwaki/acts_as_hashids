@@ -15,7 +15,7 @@ Metrics/PerceivedComplexity:
   Max: 10
 Metrics/BlockLength:
   Enabled: false
-Documentation:
+Style/Documentation:
   Enabled: false
 Style/SignalException:
   EnforcedStyle: only_raise
