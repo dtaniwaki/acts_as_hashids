@@ -25,9 +25,9 @@ Documentation:
   Enabled: false
 Style/SignalException:
   EnforcedStyle: only_raise
-Layout/IndentFirstHashElement:
+Layout/FirstHashElementIndentation:
   EnforcedStyle: consistent
-Layout/IndentFirstArrayElement:
+Layout/FirstArrayElementIndentation:
   EnforcedStyle: consistent
 Layout/EndAlignment:
   EnforcedStyleAlignWith: variable
