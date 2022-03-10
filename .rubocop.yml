@@ -7,12 +7,6 @@ AllCops:
     - "vendor/**/*"
 Metrics/AbcSize:
   Max: 40
-Metrics/LineLength:
-  Max: 125
-  AllowURI: true
-  URISchemes:
-    - http
-    - https
 Metrics/MethodLength:
   Max: 20
 Metrics/CyclomaticComplexity:
@@ -25,6 +19,12 @@ Documentation:
   Enabled: false
 Style/SignalException:
   EnforcedStyle: only_raise
+Layout/LineLength:
+  Max: 125
+  AllowURI: true
+  URISchemes:
+    - http
+    - https
 Layout/FirstHashElementIndentation:
   EnforcedStyle: consistent
 Layout/FirstArrayElementIndentation:
@@ -32,6 +32,18 @@ Layout/FirstArrayElementIndentation:
 Layout/EndAlignment:
   EnforcedStyleAlignWith: variable
 Lint/InheritException:
+  Enabled: false
+Lint/SendWithMixinArgument:
+  Enabled: false
+Lint/RaiseException:
+  Enabled: false
+Lint/StructNewOverride:
+  Enabled: false
+Style/HashEachMethods:
+  Enabled: false
+Style/HashTransformKeys:
+  Enabled: false
+Style/HashTransformValues:
   Enabled: false
 Style/FrozenStringLiteralComment:
   Enabled: false
