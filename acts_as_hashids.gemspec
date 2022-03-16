@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
   spec.executables   = `git ls-files -- bin/*`.split("\n").map { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
-  spec.required_ruby_version = ['>= 2.3.0', '<= 3.1.1']
+  spec.required_ruby_version = ['>= 2.3.0', '< 3.2']
 
   spec.add_runtime_dependency 'activerecord', '>= 4.0', '< 7.1'
   spec.add_runtime_dependency 'hashids', '~> 1.0'
