@@ -122,8 +122,8 @@ Copyright (c) 2014 Daisuke Taniwaki. See [LICENSE](LICENSE) for details.
 [gem-link]:    http://badge.fury.io/rb/acts_as_hashids
 [download-image]:https://img.shields.io/gem/dt/acts_as_hashids.svg
 [download-link]:https://rubygems.org/gems/acts_as_hashids
-[build-image]: https://www.travis-ci.com/dtaniwaki/acts_as_hashids.svg
-[build-link]:  http://travis-ci.com/dtaniwaki/acts_as_hashids
+[build-image]: https://github.com/dtaniwaki/acts_as_hashids/actions/workflows/test.yml/badge.svg
+[build-link]:  https://github.com/dtaniwaki/acts_as_hashids/actions/workflows/test.yml
 [cov-image]:   https://coveralls.io/repos/dtaniwaki/acts_as_hashids/badge.png
 [cov-link]:    https://coveralls.io/r/dtaniwaki/acts_as_hashids
 [gpa-image]:   https://codeclimate.com/github/dtaniwaki/acts_as_hashids.png
