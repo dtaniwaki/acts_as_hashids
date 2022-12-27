@@ -25,4 +25,19 @@ jobs:
         run: bundle install --jobs 3 --retry 3
       - name: Run tests
         run: bundle exec rspec
+      - name: Coveralls Parallel
+        uses: coverallsapp/github-action@1.1.3
+        with:
+          github-token: ${{ secrets.github_token }}
+          flag-name: run-${{ matrix.ruby_version }}-${{ matrix.active_record_version }}
+          parallel: true
+  finish:
+    needs: test
+    runs-on: ubuntu-20.04
+    steps:
+    - name: Coveralls Finished
+      uses: coverallsapp/github-action@1.1.3
+      with:
+        github-token: ${{ secrets.github_token }}
+        parallel-finished: true
 
