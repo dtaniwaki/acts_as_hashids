@@ -19,16 +19,16 @@ Gem::Specification.new do |spec|
   spec.executables   = `git ls-files -- bin/*`.split("\n").map { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
-  spec.required_ruby_version = ['>= 2.2.2', '< 3.0']
+  spec.required_ruby_version = ['>= 2.3.0', '< 3.2']
 
-  spec.add_runtime_dependency 'activerecord', '>= 4.0', '< 6.1'
+  spec.add_runtime_dependency 'activerecord', '>= 4.0', '< 7.1'
   spec.add_runtime_dependency 'hashids', '~> 1.0'
 
   spec.add_development_dependency 'codeclimate-test-reporter', '~> 0.5'
   spec.add_development_dependency 'coveralls', '~> 0.8'
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'rspec', '~> 3.0'
-  spec.add_development_dependency 'rubocop', '~> 0.54.0'
+  spec.add_development_dependency 'rubocop', '~> 0.81.0'
   spec.add_development_dependency 'rubocop-rspec', '~> 1.24.0'
   spec.add_development_dependency 'simplecov', '~> 0.11'
   spec.add_development_dependency 'sqlite3', '~> 1.3'

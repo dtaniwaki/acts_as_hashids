@@ -59,10 +59,10 @@ module ActsAsHashids
         where(primary_key => decoded_ids)
       end
 
-      def has_many(*args, &block) # rubocop:disable Style/PredicateName
+      def has_many(*args, &block) # rubocop:disable Naming/PredicateName
         options = args.extract_options!
         options[:extend] = (options[:extend] || []).concat([FinderMethods])
-        super(*args, options, &block)
+        super(*args, **options, &block)
       end
 
       def relation
