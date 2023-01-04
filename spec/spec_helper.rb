@@ -15,7 +15,7 @@ SimpleCov.start 'rails' do
 
     formatter SimpleCov::Formatter::MultiFormatter.new([
       SimpleCov::Formatter::LcovFormatter,
-      CodeClimate::TestReporter::Formatter,
+      CodeClimate::TestReporter::Formatter
     ])
   else
     formatter SimpleCov::Formatter::HTMLFormatter
