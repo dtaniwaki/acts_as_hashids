@@ -25,11 +25,11 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'hashids', '~> 1.0'
 
   spec.add_development_dependency 'codeclimate-test-reporter', '~> 0.5'
-  spec.add_development_dependency 'coveralls_reborn', '~> 0.26.0'
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'rspec', '~> 3.0'
   spec.add_development_dependency 'rubocop', '~> 0.81.0'
   spec.add_development_dependency 'rubocop-rspec', '~> 1.24.0'
-  spec.add_development_dependency 'simplecov', '~> 0.11'
+  spec.add_development_dependency 'simplecov', '~> 0.21.0'
+  spec.add_development_dependency 'simplecov-lcov', '~> 0.8.0'
   spec.add_development_dependency 'sqlite3', '~> 1.3'
 end

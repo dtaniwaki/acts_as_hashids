@@ -2,15 +2,25 @@ $LOAD_PATH.unshift File.expand_path('../lib', __dir__)
 
 # Test Coverage
 require 'codeclimate-test-reporter'
-require 'coveralls'
 require 'simplecov'
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  Coveralls::SimpleCov::Formatter,
-  SimpleCov::Formatter::HTMLFormatter,
-  CodeClimate::TestReporter::Formatter
-])
-SimpleCov.minimum_coverage 50
-SimpleCov.start
+
+SimpleCov.start 'rails' do
+  if ENV['CI']
+    require 'simplecov-lcov'
+
+    SimpleCov::Formatter::LcovFormatter.config do |c|
+      c.report_with_single_file = true
+      c.single_report_path = 'coverage/lcov.info'
+    end
+
+    formatter SimpleCov::Formatter::LcovFormatter
+    formatter CodeClimate::TestReporter::Formatter
+  else
+    formatter SimpleCov::Formatter::HTMLFormatter
+  end
+
+  minimum_coverage 50
+end
 
 require 'active_record'
 
