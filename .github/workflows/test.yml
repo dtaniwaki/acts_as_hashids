@@ -20,11 +20,11 @@ jobs:
           ruby-version: ${{ matrix.ruby_version }}
           bundler-cache: true
       - name: Install dependencies
-        environment:
+        env:
           ACTIVE_RECORD_VERSION: ${{ matrix.active_record_version }}
         run: bundle install --jobs 3 --retry 3
       - name: Run tests
-        environment:
+        env:
           CI: '1'
         run: bundle exec rspec
       - name: Coveralls Parallel
