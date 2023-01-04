@@ -5,16 +5,18 @@ require 'codeclimate-test-reporter'
 require 'simplecov'
 
 SimpleCov.start 'rails' do
-  if ENV['CI']
+  if ENV['CI'] || true
     require 'simplecov-lcov'
 
     SimpleCov::Formatter::LcovFormatter.config do |c|
       c.report_with_single_file = true
-      c.single_report_path = 'coverage/lcov.info'
+      c.single_report_path = './coverage/lcov.info'
     end
 
-    formatter SimpleCov::Formatter::LcovFormatter
-    formatter CodeClimate::TestReporter::Formatter
+    formatter SimpleCov::Formatter::MultiFormatter.new([
+      SimpleCov::Formatter::LcovFormatter,
+      CodeClimate::TestReporter::Formatter,
+    ])
   else
     formatter SimpleCov::Formatter::HTMLFormatter
   end
