@@ -22,6 +22,7 @@ SimpleCov.start 'rails' do
   end
 
   minimum_coverage 50
+  add_filter ['railtie.rb', 'version.rb']
 end
 
 require 'active_record'
