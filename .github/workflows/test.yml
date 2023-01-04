@@ -24,6 +24,8 @@ jobs:
           ACTIVE_RECORD_VERSION: ${{ matrix.active_record_version }}
         run: bundle install --jobs 3 --retry 3
       - name: Run tests
+        env:
+          CI: '1'
         run: bundle exec rspec
       - name: Coveralls Parallel
         uses: coverallsapp/github-action@1.1.3
