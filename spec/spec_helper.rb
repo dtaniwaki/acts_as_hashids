@@ -5,7 +5,7 @@ require 'codeclimate-test-reporter'
 require 'simplecov'
 
 SimpleCov.start 'rails' do
-  if ENV['CI'] || true
+  if ENV['CI']
     require 'simplecov-lcov'
 
     SimpleCov::Formatter::LcovFormatter.config do |c|
