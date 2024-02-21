@@ -94,6 +94,11 @@ RSpec.describe ActsAsHashids::Core do
       it 'decodes hash id and returns the record' do
         expect(foo1.core_bars.find(bar3.to_param)).to eq bar3
       end
+      context 'with normal id' do
+        it 'should behave like normal AR' do
+          expect(foo1.core_bars.find(bar3.id)).to eq bar3
+        end
+      end
       context 'without arguments' do
         it 'delegates to detect method' do
           allow(foo1.core_bars).to receive(:detect).once.and_call_original

@@ -15,7 +15,7 @@ module ActsAsHashids
 
         encoded_ids = Array(ids).map do |id|
           id = id.to_i if Integer(id)
-          hashids.encode(id)
+          return super
         rescue TypeError, ArgumentError
           id
         end
