@@ -16,7 +16,7 @@ jobs:
           bundler-cache: true
       - name: Install dependencies
         env:
-          ACTIVE_RECORD_VERSION: 7.0
+          ACTIVE_RECORD_VERSION: 7.1
         run: bundle install --jobs 3 --retry 3
       - name: Run tests
         run: bundle exec rubocop -D
